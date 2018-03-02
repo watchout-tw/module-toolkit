@@ -1,0 +1,22 @@
+{
+  "name": "module-toolkit",
+  "version": "0.0.1",
+  "description": "A lot of staff in this toolkit............",
+  "main": "toolkit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watchout-tw/module-toolkit.git"
+  },
+  "keywords": [
+    "tools"
+  ],
+  "author": "watchout",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/watchout-tw/module-toolkit/issues"
+  },
+  "homepage": "https://github.com/watchout-tw/module-toolkit#readme"
+}
