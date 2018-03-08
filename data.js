@@ -43,7 +43,7 @@ const parseJSON = (arr, data) => {
 
 /**
   * Turn null to empty array in one of the keyvalue in a object
-  * @param {string[]} tarobj - target key.
+  * @param {string} tarobj - target key.
   * @param {object} data - Input data.
   * @return {object} - the return object. 
   */

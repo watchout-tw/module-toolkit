@@ -14,7 +14,22 @@ const ifNull = (item) => {
   }
 };
 
+/**
+  * check the length of the array (if null or undefined, return 0)
+  * @param {any[]} arr - Input array.
+  * @return {number} - the length of the array. 
+  */
+const arrayLength = (arr) => {
+  if (arr == null || arr == undefined ) {
+    return 0;
+  }
+  else {
+    return (arr.length);
+  }
+};
+
 
 module.exports = {
   ifNull:ifNull,
+  arrayLength:arrayLength
 }
