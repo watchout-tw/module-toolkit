@@ -57,8 +57,60 @@ const nullToArray  = (tarobj,data) => {
   return data;
 };
 
+/**
+  * Turn null  or undefined to empty array
+  * @param {any} arr - input arr
+  * @return {any[]} - the return arr. 
+  */
+const nullToEmptyArray = (arr) => {
+  if (arr == null || arr == undefined ) {
+    return [];
+  }
+  else {
+    return arr;
+  }
+};
+
+/**
+  * Turn null or undefined to 0
+  * @param {tar} tarobj - input data
+  * @return {number} - the return number
+  */
+const nullToZero = (tar) => {
+  if (tar == null || tar == undefined ) {
+    return 0;
+  }
+  else {
+    return tar;
+  }
+};
+
+/**
+  * Turn a string array to array obecjt
+  * @param {string} str - input string array
+  * @return {any[]} out - the return array. 
+  */
+const parseStrArray = (str) => {
+  let out = [];
+  while (str !== null ) {
+
+    str = str.split(',');
+    out.push(str[0]);
+    if (str.length > 1){
+      str = str[1];
+    }
+    else {
+      str = null;
+    }
+  }
+  return out;
+};
+
 module.exports = {
   rmRepeatItemInArray:rmRepeatItemInArray,
   parseJSON:parseJSON,
-  nullToArray:nullToArray
+  nullToArray:nullToArray,
+  nullToEmptyArray:nullToEmptyArray,
+  nullToZero:nullToZero,
+  parseStrArray:parseStrArray
 }
