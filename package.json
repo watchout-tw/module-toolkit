@@ -1,6 +1,6 @@
 {
   "name": "module-toolkit",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A lot of staff in this toolkit............",
   "main": "toolkit.js",
   "scripts": {

@@ -1,6 +1,22 @@
 'use strict';
 
 /**
+  * To remove the null itams in array
+  * @param {string} Key - target key.
+  * @param {object} results - Input data.
+  * @return {any[]} - the return array. 
+  */
+const rmNullItem = (Key, results) => {
+  let arr = [];
+  for (let index in results){
+    if (results[index][Key] !== null) {
+      arr.push(results[index]);
+    }
+  }
+  return arr;
+};
+
+/**
   * To remove the repeating itams in array
   * @param {any[]} arr - Input array.
   * @return {any[]} - the return array. 
@@ -107,6 +123,7 @@ const parseStrArray = (str) => {
 };
 
 module.exports = {
+  rmNullItem:rmNullItem,
   rmRepeatItemInArray:rmRepeatItemInArray,
   parseJSON:parseJSON,
   nullToArray:nullToArray,
