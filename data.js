@@ -23,7 +23,7 @@ const rmNullItem = (Key, results) => {
   */
 const rmRepeatItemInArray = (arr) => {
   let result = arr.filter((element, index, arr) => {
-    return arr.indexOf(element)=== index;
+    return arr.indexOf(element) === index;
   });
   return result;
 };
