@@ -122,6 +122,86 @@ const parseStrArray = (str) => {
   return out;
 };
 
+/**
+  * Diff Array
+  * @param {object} input - input object.
+  *   @param {object[]} input.curr - The target table name
+  *   @param {object[]} input.next - next object array
+  *   @param {string[]} input.keys - keys to diff
+  * @return {object} output - the output object.
+  *   @return {Array} output.toAdd - The list of item should be added.
+  *   @return {Array} output.toPatch - The list of item should be patched.
+  *   @return {Array} output.toDelete - The list of item should be deleted.
+  */
+ const diffArray = (input) => {
+
+  let output = {
+    toAdd: [],
+    toPatch: [],
+    toDelete:[]
+  };
+
+  for (let i in input.next) {
+    let find = false;
+    for (let j in input.curr) {   
+      let check_key = true; 
+
+      for (let m in input.keys) {
+
+        if (typeof input.curr[j][input.keys[m]] === 'object') {
+          if (input.curr[j][input.keys[m]].getTime() !== input.next[i][input.keys[m]].getTime()) {
+            check_key = false;
+          }
+        }
+        else {
+          if (input.curr[j][input.keys[m]] !== input.next[i][input.keys[m]]) {
+            check_key = false;
+          }
+        }
+      }
+      if (check_key) {
+        find = true;
+      }
+    }
+    if (find) {
+      output.toPatch.push(input.next[i]);            
+    }
+    else {
+      output.toAdd.push(input.next[i]); 
+    }
+    
+  } 
+ 
+  for (let i in input.curr) {
+    let find = false;
+    for (let j in input.next) {   
+      let check_key = true; 
+
+      for (let m in input.keys) {
+
+        if (typeof input.next[j][input.keys[m]] === 'object') {
+          if (input.curr[i][input.keys[m]].getTime() !== input.next[j][input.keys[m]].getTime()) {
+            check_key = false;
+          }
+        }
+        else {
+          if (input.curr[i][input.keys[m]] !== input.next[j][input.keys[m]]) {
+            check_key = false;
+          }
+        }
+      }
+      if (check_key) {
+        find = true;
+      }
+    }
+    if (!find) {
+      output.toDelete.push(input.curr[i]);        
+    }
+    
+  } 
+  return output;
+};
+
 module.exports = {
   rmNullItem:rmNullItem,
   rmRepeatItemInArray:rmRepeatItemInArray,
@@ -129,5 +209,6 @@ module.exports = {
   nullToArray:nullToArray,
   nullToEmptyArray:nullToEmptyArray,
   nullToZero:nullToZero,
-  parseStrArray:parseStrArray
+  parseStrArray:parseStrArray,
+  diffArray:diffArray
 }
