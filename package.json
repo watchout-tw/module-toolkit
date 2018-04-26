@@ -1,10 +1,10 @@
 {
   "name": "module-toolkit",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "A lot of staff in this toolkit............",
   "main": "toolkit.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc mocha"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/watchout-tw/module-toolkit/issues"
   },
-  "homepage": "https://github.com/watchout-tw/module-toolkit#readme"
+  "homepage": "https://github.com/watchout-tw/module-toolkit#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1",
+    "nyc": "^11.7.1"
+  }
 }

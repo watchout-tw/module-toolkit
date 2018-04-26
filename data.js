@@ -108,18 +108,13 @@ const nullToZero = (tar) => {
   */
 const parseStrArray = (str) => {
   let out = [];
-  while (str !== null ) {
-
-    str = str.split(',');
-    out.push(str[0]);
-    if (str.length > 1){
-      str = str[1];
-    }
-    else {
-      str = null;
-    }
+  if (str === null) {
+    return [];
   }
-  return out;
+  else {
+    str = str.split(',');
+    return str;
+  }
 };
 
 /**
