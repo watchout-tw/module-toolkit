@@ -1,5 +1,4 @@
 'use strict';
-
 /**
   * To remove the null itams in array
   * @param {string} Key - target key.
