@@ -1,3 +1,4 @@
 language: node_js
 node_js:
     - "8"
+script:   - nosetests -sv --with-coverage --cover-tests --cover-package=py_http_api_test tests   - nosetests -c demo/nose.cfg demo after_success:   - codecov 原文網址：https://itw01.com/VF6WESJ.html
