@@ -63,7 +63,6 @@ const parseJSON = (arr, data) => {
   * @return {object} - the return object. 
   */
 const nullToArray  = (tarobj,data) => {
-
   for (let index in data) {
     if (data[index][tarobj] == null ) {
       data[index][tarobj] = [];
@@ -139,9 +138,7 @@ const parseStrArray = (str) => {
     let find = false;
     for (let j in input.curr) {   
       let check_key = true; 
-
       for (let m in input.keys) {
-
         if (typeof input.curr[j][input.keys[m]] === 'object') {
           if (input.curr[j][input.keys[m]].getTime() !== input.next[i][input.keys[m]].getTime()) {
             check_key = false;
@@ -163,16 +160,13 @@ const parseStrArray = (str) => {
     else {
       output.toAdd.push(input.next[i]); 
     }
-    
   } 
  
   for (let i in input.curr) {
     let find = false;
     for (let j in input.next) {   
       let check_key = true; 
-
       for (let m in input.keys) {
-
         if (typeof input.next[j][input.keys[m]] === 'object') {
           if (input.curr[i][input.keys[m]].getTime() !== input.next[j][input.keys[m]].getTime()) {
             check_key = false;
@@ -191,18 +185,17 @@ const parseStrArray = (str) => {
     if (!find) {
       output.toDelete.push(input.curr[i]);        
     }
-    
   } 
   return output;
 };
 
 module.exports = {
-  rmNullItem:rmNullItem,
-  rmRepeatItemInArray:rmRepeatItemInArray,
-  parseJSON:parseJSON,
-  nullToArray:nullToArray,
-  nullToEmptyArray:nullToEmptyArray,
-  nullToZero:nullToZero,
-  parseStrArray:parseStrArray,
-  diffArray:diffArray
+  rmNullItem: rmNullItem,
+  rmRepeatItemInArray: rmRepeatItemInArray,
+  parseJSON: parseJSON,
+  nullToArray: nullToArray,
+  nullToEmptyArray: nullToEmptyArray,
+  nullToZero: nullToZero,
+  parseStrArray: parseStrArray,
+  diffArray: diffArray
 }
